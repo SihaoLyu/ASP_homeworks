@@ -1,0 +1,2 @@
+mapper.c find_buffer_pos malloc. need to free in combiner.c
+Need to check set_active_id: sizeof(user_table[offset]) size?

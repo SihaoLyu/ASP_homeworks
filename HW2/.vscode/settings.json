@@ -1,0 +1,14 @@
+{
+    "python.pythonPath": "/usr/bin/python",
+    "files.associations": {
+        "stdio.h": "c",
+        "reducer.h": "c",
+        "public_variables.h": "c",
+        "stdlib.h": "c",
+        "string.h": "c",
+        "cstdio": "c",
+        "pthread.h": "c",
+        "cmath": "c"
+    },
+    "C_Cpp.errorSquiggles": "Enabled"
+}
