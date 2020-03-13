@@ -8,15 +8,6 @@
 using namespace std;
 #define input_length 22
 #define RCD_SIZE sizeof(struct record)
-// #define INT_MIN INT32_MIN
-// #define INT_MAX INT32_MAX
-
-
-// struct record {
-//     int     user_id = INT_MIN;
-//     int     score;
-//     char    topic[16];
-// };
 
 
 extern struct record* buffers;
@@ -60,12 +51,6 @@ static void record_process(FILE* f) {
     // check if any buffer full
     for (int i=0; i<buffer_num; i++) {
         if (buffers[i*buffer_size+buffer_size-1].user_id != INT_MIN) {
-            // for (int i=0; i<buffer_size; i++) {
-            //     for (int j=0; j<buffer_num; j++) {
-            //         cout << buffers[i*buffer_size + j].user_id << " ";
-            //     }
-            //     cout << endl;
-            // }
             pthread_cond_broadcast(empty);
             pthread_cond_wait(full, mtx);
             break;

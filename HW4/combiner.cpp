@@ -14,17 +14,6 @@
 
 
 using namespace std;
-// #define INT_MIN INT32_MIN
-// #define INT_MAX INT32_MAX
-
-
-// #ifndef struct record
-//     struct record {
-//         int    user_id = INT_MIN;
-//         int    score;
-//         char   topic[16];
-//     };
-// #endif 
 
 
 struct record* buffers;

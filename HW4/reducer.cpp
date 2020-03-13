@@ -7,17 +7,6 @@
 
 using namespace std;
 #define RCDS_LEN 100
-// #define INT_MIN INT32_MIN
-// #define INT_MAX INT32_MAX
-
-
-// #ifndef struct record
-//     struct record {
-//         int    user_id = INT_MIN;
-//         int    score;
-//         char   topic[16];
-//     };
-// #endif 
 
 
 extern struct record* buffers;
@@ -96,7 +85,6 @@ static void test(int offset) {
     }
     if (buffers[offset*buffer_size].user_id == INT_MAX) { 
         (*consumed_num)++; 
-        // cout << *consumed_num << endl;
     }
     printf("tid %d testing: %d\n", offset, buffers[offset*buffer_size].user_id);
     pthread_mutex_unlock(mtx);
