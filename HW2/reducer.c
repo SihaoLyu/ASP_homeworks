@@ -110,7 +110,12 @@ static void test(int offset) {
 
 
 void* reducer(void* user_table_offset) {
-    struct record records[records_length] = {NULL, 0, NULL};
+    struct record records[records_length];
+    for (int i=0; i<records_length; i++) {
+        records[i].user_id = NULL;
+        records[i].score = 0;
+        records[i].user_id = NULL;
+    }
     int if_end = 0;
 
     while (! if_end) {   
