@@ -5,6 +5,13 @@
             "includePath": [
                 "${workspaceFolder}/**"
             ],
+            "browse": {
+                "path": [
+                    "./**",
+                    "/usr/src/linux-headers-4.15.0-91-generic/arch/x86/include/",
+                    "/usr/src/linux-headers-4.15.0-91-generic/include/"
+                ]
+            },
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "c11",

@@ -1,0 +1,1 @@
+cmd_/home/sihaolyu/project/ASP_homeworks/HW5/char_driver.ko := ld -r -m elf_x86_64 -z max-page-size=0x200000 -T ./scripts/module-common.lds --build-id  -o /home/sihaolyu/project/ASP_homeworks/HW5/char_driver.ko /home/sihaolyu/project/ASP_homeworks/HW5/char_driver.o /home/sihaolyu/project/ASP_homeworks/HW5/char_driver.mod.o ;  true

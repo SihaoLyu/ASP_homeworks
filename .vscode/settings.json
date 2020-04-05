@@ -1,6 +1,13 @@
 {
     "files.associations": {
         "iostream": "cpp",
-        "ostream": "cpp"
-    }
+        "ostream": "cpp",
+        "cdev.h": "c",
+        "uaccess.h": "c",
+        "i2c.h": "c",
+        "device.h": "c",
+        "*.tcc": "c"
+    },
+
+    "C_Cpp.intelliSenseEngine": "Tag Parser"
 }

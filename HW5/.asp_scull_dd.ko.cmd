@@ -1,0 +1,1 @@
+cmd_/home/sihaolyu/project/ASP_homeworks/HW5/asp_scull_dd.ko := ld -r -m elf_x86_64 -z max-page-size=0x200000 -T ./scripts/module-common.lds --build-id  -o /home/sihaolyu/project/ASP_homeworks/HW5/asp_scull_dd.ko /home/sihaolyu/project/ASP_homeworks/HW5/asp_scull_dd.o /home/sihaolyu/project/ASP_homeworks/HW5/asp_scull_dd.mod.o ;  true
