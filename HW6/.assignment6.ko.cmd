@@ -1,0 +1,1 @@
+cmd_/home/sihaolyu/project/ASP_homeworks/HW6/assignment6.ko := ld -r -m elf_x86_64 -z max-page-size=0x200000 -T ./scripts/module-common.lds --build-id  -o /home/sihaolyu/project/ASP_homeworks/HW6/assignment6.ko /home/sihaolyu/project/ASP_homeworks/HW6/assignment6.o /home/sihaolyu/project/ASP_homeworks/HW6/assignment6.mod.o ;  true

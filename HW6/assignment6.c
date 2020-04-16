@@ -1,7 +1,8 @@
 #include <linux/module.h>
 #include <linux/kernel.h>
 #include <linux/fs.h>
-#include <asm/uaccess.h>
+// #include <asm/uaccess.h>
+#include <linux/uaccess.h>
 #include <linux/semaphore.h>
 #include <linux/cdev.h>
 #include <linux/wait.h>
@@ -64,7 +65,7 @@ int e2_release(struct inode *inode, struct file *filp)
         devc->count1--;
         if (devc->count1 == 1)
             wake_up_interruptible(&(devc->queue1));
-			up(&devc->sem2);
+		up(&devc->sem2);
     }
     else if (devc->mode == MODE2) {
         devc->count2--;
@@ -77,7 +78,7 @@ int e2_release(struct inode *inode, struct file *filp)
 
 static ssize_t e2_read (struct file *filp, char __user *buf, size_t count, loff_t *f_pos)
 {
-        struct e2_dev *devc = filp->private_data;
+    struct e2_dev *devc = filp->private_data;
 	ssize_t ret = 0;
 	down_interruptible(&devc->sem1);
 	if (devc->mode == MODE1) {
@@ -202,8 +203,11 @@ static const struct file_operations fops = {
 static int __init my_init (void) {
 
    int ret = 0;
-   dev_t dev_no = MKDEV(majorNo, minorNo);
-   ret = register_chrdev_region(dev_no, 1, MYDEV_NAME);
+   dev_t dev_no;
+   ret = alloc_chrdev_region(&dev_no, minorNo, 1, MYDEV_NAME);
+   majorNo = MAJOR(dev_no);
+//    dev_t dev_no = MKDEV(majorNo, minorNo);
+//    ret = register_chrdev_region(dev_no, 1, MYDEV_NAME);
    if (ret<0) {
     	printk(KERN_ALERT "mycdrv: failed to reserve major number");
     	return ret;

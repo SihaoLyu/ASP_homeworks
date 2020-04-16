@@ -6,7 +6,8 @@
         "uaccess.h": "c",
         "i2c.h": "c",
         "device.h": "c",
-        "*.tcc": "c"
+        "*.tcc": "c",
+        "fstream": "c"
     },
 
     "C_Cpp.intelliSenseEngine": "Tag Parser"
